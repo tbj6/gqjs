@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>佛山市各区介绍轮播图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        /* 整体背景样式 */
+        body {
+            background: linear-gradient(135deg, #e6f7ff 0%, #f3e5f5 100%);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 标题样式 */
+        p.aaa {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 40px; /* 增大标题字号 */
+            font-weight: 800;
+            color: #1e3a8a;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 新增的介绍段落样式 */
+        p.introduction {
+            text-align: center;
+            margin: -1rem 0 2rem 0;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+
+        /* 轮播图容器样式 */
+        .slider-container {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 轮播图样式 */
+        .slider {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* 单个幻灯片样式 */
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 2rem;
+            text-align: center;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 幻灯片图片样式 */
+        .slide img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 幻灯片标题样式 */
+        .slide h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        /* 幻灯片段落样式 */
+        .slide p {
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 幻灯片链接样式 */
+        .slide a {
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        /* 幻灯片链接悬停样式 */
+        .slide a:hover {
+            color: #0d6efd;
+            border-bottom-color: #0d6efd;
+        }
+
+        /* 上一张和下一张按钮样式 */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background-color: rgba(30, 58, 138, 0.8);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        /* 上一张按钮位置 */
+        .prev {
+            left: 1rem;
+        }
+
+        /* 下一张按钮位置 */
+        .next {
+            right: 1rem;
+        }
+
+        /* 按钮悬停样式 */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(30, 58, 138, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <p class="aaa">佛山市简介</p>
+    <p class="introduction">佛山，地处珠江三角洲腹地，是广东省重要的制造业基地和历史文化名城。<br>它不仅拥有深厚的岭南文化底蕴，如武术、粤剧等传统文化在此源远流长，<br>还在经济发展上取得了显著成就，多个产业在国内外具有较高的知名度和竞争力。</p>
+    <div class="slider-container" id="sliderContainer">
+        <div class="slider" id="slider">
+            <div class="slide">
+                <img src="ccq.jpeg" alt="禅城区">
+                <h2>禅城区</h2>
+                <p>禅城区是佛山市中心城区，面积154平方公里，下辖南庄镇、石湾镇街道、张槎街道、祖庙街道，共有行政村53个、社区94个；常住人口137万人，其中户籍人口76万人。近年来，紧扣城市中心定位，全力锻造“禅城铁军”、打造“佛山之心”、奔赴“六最”（最中心、最佛山、最便捷、最活力、最平安、最幸福）现代化禅城，中国式现代化禅城实践干出崭新气象。自2023以来，连续6个季度夺得全市经济高质量发展评价第一名，位列全国地级市辖区高质量发展百强第8名，获评全国“2023年度活力城区”、“企业家幸福感最强区”，全区共获得国家级、省级荣誉超过80项，城市综合能级、地区影响力、社会美誉度全面提升。<a href="https://www.chancheng.gov.cn/mlsc/">了解更多</a></p>
+            </div>
+            <div class="slide">
+                <img src="nhq.png" alt="南海区">
+                <h2>南海区</h2>
+                <p>佛山市南海区地处粤港澳大湾区腹地，毗连广州，面积1071.82平方公里，辖6个镇、1个街道、292个村（社区）。截至2023年底，户籍人口179.78万，常住人口367.54万，海外侨胞40多万。南海历史悠久，名人荟萃，秦朝（公元前214年）设郡，隋朝（公元590年）置县，涌现出康有为、陈启沅、詹天佑、黄飞鸿、邹伯奇、何香凝、陈香梅等一大批杰出人物。作为改革开放先行区，南海曾以“六个轮子一起转”创造县域经济发展的“南海模式”，民营经济率先发展壮大，创造了跻身广东“四小虎”的发展传奇。<a href="https://www.nanhai.gov.cn/fsnhq/rwnh/index.html">了解更多</a></p>
+            </div>
+            <div class="slide">
+                <img src="sdq.png" alt="顺德区">
+                <h2>顺德区</h2>
+                <p>　顺德地处珠三角腹地，北接广州，南近港澳，面积806平方公里，现辖大良、容桂、伦教、勒流4个街道、陈村、北滘、乐从、龙江、杏坛、均安6个镇，共206个村（社区），常住人口326.86万，其中户籍人口172.43万，旅居海外乡亲50多万。2024年，顺德连续13年蝉联全国综合实力百强区榜首。顺德历史文化底蕴深厚，是岭南文化的一颗“明珠”。拥有“龙舟说唱”“香云纱染整技艺”“人龙舞”“八音锣鼓”等4项国家级非物质文化遗产，是粤曲、粤剧的发源地之一，被评为“中国曲艺之乡”...<a href="https://www.shunde.gov.cn/sdqrmzf/zjsd/index.html">了解更多</a></p>
+            </div>
+            <div class="slide">
+                <img src="gmq.jpg" alt="高明区">
+                <h2>高明区</h2>
+                <p>佛山市高明区位于广东省中部，珠三角西翼，西江西岸。全区总面积937.81平方公里，常住人口47.56万人，下辖荷城街道、杨和镇、明城镇、更合镇，共77个行政村（社区）。区政府所在地荷城街道紧邻西江，距广州市68公里，距香港101海里、澳门74海里。汉元鼎六年（公元前111年）置兵高明寨，因兵寨处于山南水北的高而明亮之地，“高明”由此得名。<a href="https://www.gaoming.gov.cn/lsgm/index.html">了解更多</a></p>
+            </div>
+            <div class="slide">
+                <img src="ssq.jpg" alt="三水区">
+                <h2>三水区</h2>
+                <p>三水区是佛山市的一个辖区，地处珠江三角洲西北端。三水历史悠久，人文底蕴深厚，有胥江祖庙等历史文化遗迹。三水的经济以工业为主，饮料食品、化工等产业发展态势良好。此外，三水还拥有丰富的温泉资源，如三水温泉度假村，吸引着众多游客前来放松身心。<a href="https://www.ss.gov.cn/mlss/index.html">了解更多</a></p>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.slide');
+        const sliderContainer = document.getElementById('sliderContainer');
+        let currentIndex = 0;
+        let intervalId;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const translateValue = -currentIndex * 100 + '%';
+            slider.style.transform = 'translateX(' + translateValue + ')';
+        }
+
+        function startAutoScroll() {
+            intervalId = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(intervalId);
+        }
+
+        // 鼠标悬停时停止滚动
+        sliderContainer.addEventListener('mouseenter', stopAutoScroll);
+        // 鼠标离开时继续滚动
+        sliderContainer.addEventListener('mouseleave', startAutoScroll);
+
+        // 初始化自动滚动
+        startAutoScroll();
+    </script>
+</body>
+
+</html>
